@@ -1,0 +1,15 @@
+In the style editor, visual editor. 
+Almost none of the styles can be selected. 
+Style sorting is still wrong. This might have been what was lost. The sort order: imports>start with "@">starts with alphanumeric>starts with ".". 
+When entering the tool, when switching to a new pane, when leaving a pane, the styles should be sorted,  then sheet itself should be formatted.
+ When first entering he styles should be merged first the stylesheets (.css), then the html files. Within the two groups, priority goes to the first, then second, ... By priority means that if a style/classes is already in the (active) style sheet, it is skipped over for the rest of the files. 
+Styles/classes are never merged or have more than one entry in the (active) style sheet.
+No field in the style management tool should have auto-capitalization or other auto-text functions.
+
+Files in the stylesheet management pane only deals with files from the file browser. For load (replace active stylesheet) and merge, the files must be from the file browser. When saving the style sheet, it  goes back into the file browser. No file should be uploaded or downloaded from inside the too.
+When the stylesheet io merge button is pressed, the selected file is given the priority, then the active style sheet
+The raw css editor should support find (ctrl^f) to position to the next in the file.
+In the  style management pane, deleting and replacing styles should create an instruction comment. 
+When deleting a style, an instruction comment should be created <!-- delete style xyzzy -->. This means the style has been deleted from the active stylesheet. When saving the stylesheet, it should go through the body and delete all references to the style.
+When replace style/class, the class should be delete from the stylesheet. An instruction comment should be added to the stylesheet <!-- replace style oldstyle with newstyle. When saving the files, any use of the style/class should replace oldstyle with newstyle. Keep in mind this is only for the style attribute. The instruction comments inform the save files function to process changes to the bodies. It also allows saving the instructions so files can be run multiple times. So if I repeat converting a bunch of pdf files, I can repeat the style changes the next time I do it. Just as for an example.
+If no file is selected when entering the tool, a new, blank stylesheet should be created. And that's valid, edit styles should always be available. Then the style manager and other panes can develop a new style sheet.

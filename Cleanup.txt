@@ -1,0 +1,13 @@
+create any needed test cases. 
+
+the intention here is to ease maintanance with multiple developers. I want to refactor the code a bit. this will apply both to the client and sides. refactoring server side logic is most important. do look at both.
+
+first separate all ui from logic as much as possible.
+
+eliminate duplicate and orphan code and files. look for logical function duplicates as well as just code duplicates. 
+
+minimized the size of source code. ignoring import and export lines, attempt to have less than 200 lines per file. some files will not be able to split that much, but that's the goal. aim  for one externally visible function per file. Functions should be 30 lines of code or less. If the refactored code is local to the main function, it can be left in the same file. If it can be used in multiple places, it should  be in it's own file. All logic should be a pure function, if possible.
+
+for pure logic files, there should only be one function per file.
+
+What are the 15 biggest source code files and how many line do each have

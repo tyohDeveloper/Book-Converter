@@ -1,0 +1,18 @@
+I want to  add some behavior/function to the edit style tool. It's  to make it easier to create a stabdard stle sheets. 
+
+Stlesheets can be loaded, merged, and saved (downloaded) to external files. Stylesheets can be downloaded and uploaded via the file tool. There is a field for the name of the saved file. the default name is stylesheet.css. for input, there are load and merge button. Files selected for the tool with the extention of .css are avaiable lor loading (replacing) the style stylesheet. merging the stylesheet merges the stylesheet with the current style sheet.
+
+Multiple files can be have their styles edited at the same time (select files in browser before entering tool). The style sheet will be the union of all syles. When exiting the tool, it will replace the stlesheet for all of the files. It will also change the body of file based on the instructions (more later).
+
+When entering the tool, sort and format the stylesheet. Going forward, resort & format the stlesheet on save styles. Switching tabs implicitly saves styles. Maintain the sort order and formated.
+
+There will be a tab for adding, deleting, merging, and replacing styles.  This may require changing the body of the files when exiting/finishing the styles. this would be a good place for loading/replacing and saving the style sheet function. 
+
+The add function will add a style. 
+The delete/remove style will delete it from the stylesheet and remove the style references in the body elements (on exit). This will replace the remove/delete funtion in the visual editor.
+The replace function will replace the style references in the body elements with the newly selected style. I'm not sure how this done in the ui. 
+The delete and replace functions will add special comments indicating the action. this is to record the action so it can be reapplied when a new/merge stylesheet is loaded. 
+Something like <!-- instruction - delete stylename --> or <!-- instruction replace oldstylename with newstylename -->
+On merging/loading or a stylesheet, these instructions are done immediately on the stylesheet. on exit/finish, it will replace the style references in the body of the files.
+
+The folowing feature is to apply changes across multiple style/classes in the visual editor. For instance, if h1,h2,h3 are selected, the font & color will be added/replaced in each style. this is different from a style of "h1, h2" as it will change the attributes for each of the style elements. To make the font fancy & blue for all headers, select every header, change the font to fancy, change the color to blue. Any attribute that isn't changed will remain unchanged in the styles. This way the font and color will change for all header styles, but the font-size will remain unchanged.

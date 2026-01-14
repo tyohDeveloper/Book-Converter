@@ -1,0 +1,22 @@
+import { getHeaders } from '../session';
+import type { ConvertResult, EpubSettings } from './types';
+
+export async function convertToEpub(fileId: string, settings: EpubSettings, signal?: AbortSignal): Promise<ConvertResult> {
+  const response = await fetch('/api/tools/convert', {
+    method: 'POST',
+    headers: {
+      ...getHeaders(),
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ fileId, settings }),
+    signal
+  });
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({ error: 'Failed to convert to EPUB' }));
+    throw new Error(error.details || error.error);
+  }
+
+  const data = await response.json();
+  return data;
+}
