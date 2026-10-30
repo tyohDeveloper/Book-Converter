@@ -29,11 +29,13 @@
       },
       {
         "name": "Blobs",
-        "implementation": "Replit object storage (substitute; recorded per profiles \u00a73.6)"
+        "implementation": "replit-object-storage",
+        "reason": "Replit-era hosting stores file bytes in Replit object storage behind server/lib/object-storage; recorded substitute per profiles section 3.6"
       },
       {
         "name": "Secrets",
-        "implementation": "environment"
+        "implementation": "environment",
+        "reason": "DATABASE_URL and object-storage credentials come from the host environment; no KMS"
       }
     ]
   },

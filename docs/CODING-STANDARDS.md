@@ -21,7 +21,7 @@ The complete applicable policy is the following documents at tag `standards-1.0.
 
 Digital Bindery (document toolkit, EPUB/HTML/PDF conversion). As adopted, the application is the Replit-era hosted client/server build: an Express server holding per-session file metadata in Postgres and file bytes in object storage, keyed by a `sessionStorage` session id that the server expires. That is `state = session` semantics carried by a hosted store, which profiles §2.2 does not provide for (E-2). The planned rewrite is a Standalone session edition (`session / single-file or native-shell / blob-only / none / none`, ports Blobs and Files, no database engine); it will be a separate edition and a new adoption record, not a migration of this one.
 
-Delivery profile (declared in the adoption record): `state = session`, `packaging = hosted-web`, `store = sql+json+blob`, `identity = none`, `network = required`, `compute = interactive`; localization scope none. Ports: `Store` (default), `Blobs` (Replit object storage (substitute; recorded per profiles §3.6)), `Secrets` (environment). Bindings: `typescript:application`, `sql:schema`.
+Delivery profile (declared in the adoption record): `state = session`, `packaging = hosted-web`, `store = sql+json+blob`, `identity = none`, `network = required`, `compute = interactive`; localization scope none. Ports: `Store` (default), `Blobs` (replit-object-storage, recorded substitute per profiles §3.6), `Secrets` (environment). Bindings: `typescript:application`, `sql:schema`.
 
 Role mapping (responsibility-named directories; roles are not directory names):
 

@@ -13,7 +13,7 @@ Inspect the code before choosing tools or patterns; do not import conventions fr
 ## Delivery profile directives
 
 - Profile: state `session`, packaging `hosted-web`, store `sql+json+blob`, identity `none`, network `required`, compute `interactive`; localization scope none. Rules bound to these values are in `standards/profiles.md` §3 of the hub; apply them without re-deriving.
-- Ports used: `Store` (default), `Blobs` (Replit object storage (substitute; recorded per profiles §3.6)), `Secrets` (environment). PURE, STATE and DATA modules import none of them; CONTROLLER mediates. Do not change a port implementation without updating the adoption record.
+- Ports used: `Store` (default), `Blobs` (replit-object-storage, recorded substitute), `Secrets` (environment). PURE, STATE and DATA modules import none of them; CONTROLLER mediates. Do not change a port implementation without updating the adoption record.
 - Bindings: `typescript:application`, `sql:schema`. Follow `standards/bindings/<language>.md`; the class column in `coding-core.md` sets which rules are mandatory.
 - Hosted, `identity = none`: there is no access gate; data is isolated per session id only. Do not add durable per-user data to this edition.
 - The planned standalone edition is a separate model; do not add synchronization between editions.
